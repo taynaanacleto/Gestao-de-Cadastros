@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+    <script src="script.js"></script>
+
+
+
+    <title>Gestão de Cadastros</title>
+</head>
+
+<body onload="carrega_produtos()">
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand title" href="index.html">Gestão de Cadastros</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container p-3 my-3 border">
+        <div class="title-container">
+            <h1 class="cliente">Produtos</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="button">
+            <button type="button" class="btn btn-primary " onclick="novo_produto()">
+                Adicionar Produto
+            </button>
+        </div>
+
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title ">Cadastro de Produtos</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="form">
+                            <div class="row">
+                                <div class="col">
+                                    <h5>Dados do Produto:</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="codigo">Código</label>
+                                    <input type="text" class="form-control" id="codigo" placeholder="Código do produto">
+                                </div>
+                                <div class="col-md-6 form-group">
+
+                                    <label for="produto">Produto</label>
+                                    <input type="text" class="form-control" id="produto" placeholder="Nome do produto">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="preco">Preço</label>
+                                    <input type="text" class="form-control" id="preco" placeholder="Preço">
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="quantidade">Quantidade</label>
+                                    <input type="number" class="form-control" id="quantidade" placeholder="Quantidade">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" id="btn_cadastrar" onclick="save_produto()" class="btn btn-secondary"
+                            >Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="dados-produtos">
+
+            </tbody>
+    </div>
+
+</body>
+
+</html>

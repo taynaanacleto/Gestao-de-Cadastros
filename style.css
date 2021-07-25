@@ -1,0 +1,44 @@
+
+.title{
+    
+    color:white ;
+    text-decoration: none;
+    font-size: 25px;
+    
+}
+a:hover{
+    color:white;
+}
+.title-container{
+    text-align: center;
+}
+header{
+    background-color: gray;
+    
+    
+}
+.button{
+    font-size: 17px;
+    margin-bottom: 15px;
+   text-align: right;
+    
+    
+}
+.btn-cadastro{
+    text-align: center;
+    margin-top: 15px;
+}
+label{
+    font-weight: bold;
+}
+@media only screen and (min-width: 372px) and (max-width: 415px) {
+    .button{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 371px) {
+    .button{
+        font-size: 15px;
+        margin-top: 8px;
+    }
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+    <title>Gestão de Cadastros</title>
+</head>
+
+<body onload="carrega_clientes()">
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand title" href="index.html">Gestão de Cadastros</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container p-3 my-3 border">
+        <div class="title-container">
+            <h1 class="cliente">Clientes</h1>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="button">
+            <button type="button" class="btn btn-primary " onclick="novo_cliente()">
+                Adicionar
+            </button>
+        </div>
+        
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title ">Cadastro de Cliente</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="form">
+                            <div class="row">
+                                <div class="col">
+                                    <h5>Dados do Cliente:</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" class="form-control" id="nome" placeholder="Nome">
+                                </div>
+                                <div class="col-md-6 form-group">
+
+                                    <label for="cpf">CPF</label>
+                                    <input type="text" class="form-control" id="cpf"  placeholder="CPF">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="telefone">Telefone</label>
+                                    <input type="text" class="form-control" id="telefone" placeholder="Telefone">
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="email">E-mail</label>
+                                    <input type="text" class="form-control" id="email" 
+                                        placeholder="E-mail">
+                                </div>
+                            </div>
+
+                            <div class="modal-header endereco">
+                                <h5>Dados do Endereço:</h5>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <label for="endereço">Endereço</label>
+                                    <input type="text" class="form-control" id="endereço"
+                                        placeholder="Digite o nome da Rua">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="numero">Numero</label>
+                                    <input type="text" class="form-control" id="numero"
+                                        placeholder="Digite o número">
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="complemento">Complemento</label>
+                                    <input type="text" class="form-control" id="complemento" 
+                                        placeholder="Complemento">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="cep">CEP</label>
+                                    <input type="text" class="form-control" id="cep"
+                                        placeholder="Digite o número">
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="cidade">Cidade</label>
+                                    <input type="text" class="form-control" id="cidade" 
+                                        placeholder="Complemento">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="bairro">Bairro</label>
+                                    <input type="text" class="form-control" id="bairro" 
+                                        placeholder="Digite o número">
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="estado">Estado</label>
+                                    <input type="text" class="form-control" id="estado" 
+                                        placeholder="Complemento">
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+
+
+                    <div class="modal-footer">
+                        <button type="button" id="btn_cadastrar" onclick="save_cliente()" class="btn btn-secondary" >Cadastrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="dados-clientes">
+               
+            </tbody>
+    </div>
+
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
